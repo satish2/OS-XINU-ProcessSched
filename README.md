@@ -2,15 +2,15 @@ CSC501 Spring 2015
 PA1: Process Scheduling
 Due: February 11 2015, 10:00 pm
 
-1. Objectives
+-> Objectives
 
 The objectives of this lab are to get familiar with the concepts of process management like process priorities, scheduling, and context switching.
 
-2. Readings
+-> Readings
 
 The XINU source code (in sys/), especially those related to process creation (create.c), scheduling (resched.c, resume.c, and suspend.c), termination (kill.c), priority change (chprio.c), as well as other related utility programs (e.g., ready.c) and system initialization code (initialize.c).
 
-3. What to do
+-> What to do
 
 You will also be using the csc501-lab0.tgz you have downloaded and compiled by following	the lab	setup guide in PA0, but you need to rename the whole directory to csc501-lab1.
 
@@ -60,7 +60,7 @@ For the Linux-like scheduling policy, a valid process priority value is an integ
     
     Processes created by default (e.g., the master process) are Normal processes.
 
-4. Other implementation details:
+-> Other implementation details:
 
     1. void setschedclass(int sched_class) 
     This function should change the scheduling type to either of the supplied LINUXSCHED or MULTIQSCHED.
