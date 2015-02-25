@@ -1,0 +1,37 @@
+Satish Inampudi
+CSC 501 - 001
+UNITY ID : sinampu
+
+LINUXSCHED:
+	Advantages:
+		1) Processes with higher priority are preferred to execute first and they run for longer time, but processes with lower priority are chosen to be executed
+		with in epoch. This avoids the starvation of low priority processes i.e., low priority processes no longer need to wait for higher priority process to be
+		executed completely.
+		2) Other advantage is if a process uses its allocated CPU time partially, it will be given more time and higher preference in the next epoch.
+
+	Disadvantages:
+		1) For new processes that are created during an epoch, they will have to wait till all processes pertaining to that epoch finish their quantum. This means higher priority new processes have to wait.
+		2) If many processes are in ready state, first process with maximum goodness have to wait for long time till all processes finish their quantum.
+		3) Does not differentiate between real-time and normal processes.
+
+
+MULTIQSCHED:
+	Advantages:
+		1) Since 70% of time RealTime processes are preferred over Normal processes, starvation for RealTime processes is very less. Also, real-time processes are executed in RoundRobin manner for fixed CPU time in an epoch, so there is no starvation amongst real-time processes i.,e one real-time process no need to wait for longer periods of time to execute.
+		2) When there are no real-time processes, this scheduling algorithm is similar to LINUXSCHED, so has same advantages specified above.
+		
+	Disadvantages:
+		1) Since normal processes get only 30% of chance to be scheduled, normal processes starve compared to real-time processes. And, since normal process follows LINUXSCHED, low priority processes get less time and have to wait for longer periods of time. Hence, in this case lower priority normal processes starve more, more than or almost as that of LINUXSCHED.
+		2) When there are lot of normal processes and normal queue is selected randomly to be scheduled, real-time processes have to wait for long time. Also,
+		when a new normal process is added in middle of epoch that is handling normal processes, it has to wait for long time to get its chance.
+		3) Since Realtime processes are executed in RoundRobin, higher priority Real-time may sometimes execute later than low priority ones.
+		
+
+XINUSCHED:
+	Advantages:
+		1) Since this is priority based scheduling, higher priority processes execute first. Since initial quantum is 10 CPU ticks only, a new process with even more priority is created, it will be scheduled to execute next unlike LINUXSCHED or MULTIQSCHED, where new process has to wait till all processes with low priority finish their quantum.
+		
+	
+	Disadvantages:
+		1) Low priority process has to wait for all higher priority processes to be executed. In worst cases, they may not even execute.
+		2) Does not differentiate Real-time and normal processes.
