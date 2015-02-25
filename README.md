@@ -67,8 +67,8 @@ Processes created by default (e.g., the master process) are Normal processes.
     This function should return the scheduling class which should be either LINUXSCHED or MULTIQSCHED.
 
 3. Each of the scheduling class should be defined as constants
-    #define LINUXSCHED 1
-    #define MULTIQSCHED 2 
+    define LINUXSCHED 1
+    define MULTIQSCHED 2 
 
 4. Some of source files of interest are: create.c, resched.c, resume.c, suspend.c, ready.c, proc.h, kernel.h etc. 
 5. Additional	Questions
